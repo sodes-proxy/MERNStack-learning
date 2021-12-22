@@ -3,7 +3,9 @@ const Joi=require('joi');
 const mongoose=require('mongoose');
 const app=express();
 const connectDB=require('./config/dbConn');
+const bodyParser=require('body-parser');
 require('dotenv/config');
+app.use(bodyParser.json());
 //import routes
 const createRoute=require('./routes/create');
 app.use(express.json());

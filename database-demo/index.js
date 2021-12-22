@@ -7,7 +7,7 @@ const bodyParser=require('body-parser');
 require('dotenv/config');
 app.use(bodyParser.json());
 //import routes
-const createRoute=require('./routes/create');
+const crudRoute=require('./routes/CRUD');
 app.use(express.json());
 const port=process.env.PORT || 3000; //check if there is an env variable for port
 //connect to mongo DB
@@ -24,5 +24,5 @@ mongoose.connection.once('open',()=>{
 app.get('/',(req,res)=>{
     res.send('welcome to index');
 });
-//get routes with middleware
-app.use('/create',createRoute);
+//crud dir
+app.use('/crud',crudRoute);

@@ -15,4 +15,4 @@ const testSchema=mongoose.Schema({
         default:Date.now
     }});
     //name of model in database
-module.exports=mongoose.model('ok',testSchema);
+module.exports=mongoose.model('test',testSchema);

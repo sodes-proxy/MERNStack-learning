@@ -1,14 +1,14 @@
 const express=require('express');
-const Joi=require('joi');
 const mongoose=require('mongoose');
 const app=express();
 const connectDB=require('./config/dbConn');
 const bodyParser=require('body-parser');
 require('dotenv/config');
-app.use(bodyParser.json());
 //import routes
 const crudRoute=require('./routes/CRUD');
+//middlewares
 app.use(express.json());
+app.use(bodyParser.json());
 const port=process.env.PORT || 3000; //check if there is an env variable for port
 //connect to mongo DB
 connectDB();

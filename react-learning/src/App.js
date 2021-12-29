@@ -6,10 +6,15 @@ const App=()=> {
     {id:1,text:'first task',day:'29/12/2021',reminder:true},
     {id:2,text:'second task',day:'30/12/2021',reminder:false}
 ])
+//delete Task
+const delTask=(id) =>{
+  setTasks(tasks.filter((task)=>task.id !==id));
+  tasks.pop(id);
+}
   return (
     <div className="container">
       <Header/>
-      <Tasks tasks={tasks}/>
+      {tasks.length>0?<Tasks tasks={tasks} onDelete={delTask}/>:<h3>No task to show</h3>}
     </div>
   );
 }

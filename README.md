@@ -1,2 +1,6 @@
-# NodeJs-learning
-Repository with my node js learning Journey
+# MERN Stack learning
+Repository with my MERN stack learning Journey
+M: MongoDB
+E: Express
+R: React
+N: Node

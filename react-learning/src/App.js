@@ -8,13 +8,16 @@ const App=()=> {
 ])
 //delete Task
 const delTask=(id) =>{
-  setTasks(tasks.filter((task)=>task.id !==id));
-  tasks.pop(id);
+  setTasks(tasks.filter((task)=>task.id !==id))
+}
+//Toggle Reminder
+const toggleReminder=(id)=>{
+  setTasks(tasks.map((task)=>task.id===id?{...task,reminder:!task.reminder}:task))
 }
   return (
     <div className="container">
       <Header/>
-      {tasks.length>0?<Tasks tasks={tasks} onDelete={delTask}/>:<h3>No task to show</h3>}
+      {tasks.length>0?<Tasks tasks={tasks} onDelete={delTask} onToggle={toggleReminder}/>:<h3>No task to show</h3>}
     </div>
   );
 }
